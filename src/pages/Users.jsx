@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import UserTable from './UserTable';
-import AddUserForm from './AddUserForm';
-import EditUserForm from './EditUserForm';
+import UserTable from '../components/UserTable';
+import AddUserForm from '../components/AddUserForm';
+import EditUserForm from '../components/EditUserForm';
 import { v4 as uuidv4} from 'uuid';
 
 
