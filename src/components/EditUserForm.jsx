@@ -20,32 +20,40 @@ const EditUserForm = (props) => {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <label>Name</label>
-            <input
-             type="text"
-             name="name"
-                {...register("name",{
-                    required: {value: true, message: "Campo Obligatorio"}
-                    })          
-                }
-            />
+        <form>
+            <div className='mb-3'>
+                    <label className='form-label'>Name</label>
+                    <input
+                    type="text"
+                    className='form-control'
+                    name="name"
+                        {...register("name",{
+                            required: {value: true, message: "Campo Obligatorio"}
+                            })          
+                        }
+                    />
+                </div>
             <div>
                 {errors.name?.message} 
             </div>            
-            <label>Username</label>
-            <input
-             type="text"
-             name="username"
-                {...register("username",{
-                    required: {value: true, message: "Campo Obligatorio"}
-                    })          
-                }  
-            />
+            <div className='mb-3'>
+                    <label className='form-label'>Username</label>
+                    <input
+                    type="text"
+                    className='form-control'
+                    name="username"
+                        {...register("username",{
+                            required: {value: true, message: "Campo Obligatorio"}
+                            })          
+                        }  
+                    />
+                </div> 
             <div>
                 {errors.username?.message} 
             </div>
-            <button>Edit new user</button>
+            <div>
+                <button className="btn btn-secondary" onSubmit={handleSubmit(onSubmit)}>Edit new user</button>
+            </div>            
         </form>
     );
 }

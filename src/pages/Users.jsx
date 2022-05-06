@@ -50,9 +50,12 @@ const Users = () => {
 
     return (
         <div className="container">
-          <h1>CRUD App with Hooks</h1>
-          <div className="flex-row">
-            <div className="flex-large">
+          <nav class="navbar navbar-dark bg-dark">
+            <h1>CRUD App with Hooks</h1>
+          </nav>
+          <br />                
+          <div className="row">
+            <div className="col">
             {
               editing? (
                 <div>
@@ -69,10 +72,9 @@ const Users = () => {
                   <AddUserForm addUser={addUser}/>
                 </div>                            
                 )
-            }   
-             
+            }  
             </div>
-            <div className="flex-large">
+            <div className="col">
               <h2>View users</h2>
               <UserTable
                users={users}

@@ -5,32 +5,33 @@ const UserTable = (props) => {
     console.log(props.users)
     return (
         props.users &&
-        <table>
+        <div className="container">            
+            <table className="table table-hover">
             <thead>
-            <tr>
-                <th>Name</th>
-                <th>Username</th>
-                <th>Actions</th>
-            </tr>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Actions</th>
+                </tr>
             </thead>
             <tbody>
-                {
-                    props.users.length > 0 ?
+                {   props.users.length > 0 ?
                     props.users.map(user => (
                         <tr key={user.id}>
                             <td>{user.name}</td>
                             <td>{user.username}</td>
                             <td>
                             <button 
-                                className="button muted-button"
+                                className="btn btn-secondary"
                                 onClick={
                                     () => {props.editRow(user)}
                                 }
                             >
                                 Edit
                             </button>
+                            <span>   </span>
                             <button
-                                className="button muted-button"
+                                className="btn btn-secondary"
                                 onClick={() => {props.deleteUser(user.id)}}
                             >
                                 Delete
@@ -43,11 +44,14 @@ const UserTable = (props) => {
                         </tr>
                     )
                 }
-            <tr>
-                
-            </tr>
             </tbody>
         </table>
+        </div>  
+        
+        
+        
+        
+        
     );
 }
  
