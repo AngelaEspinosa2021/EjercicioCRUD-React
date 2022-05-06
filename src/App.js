@@ -22,21 +22,28 @@ function App() {
         ])
     }
 
-  return (
-    <div className="container">
-      <h1>CRUD App with Hooks</h1>
-      <div className="flex-row">
-        <div className="flex-large">
-          <h2>Add user</h2>
-          <AddUserForm addUser={addUser}/>
-        </div>
-        <div className="flex-large">
-          <h2>View users</h2>
-          <UserTable users={users}/>
+    //eliminar usuarios
+    const deleteUser = (id) => {
+      const arrayFiltrado = users.filter(user => user.id != id);
+      setUsers(arrayFiltrado)
+    }     
+    
+
+    return (
+      <div className="container">
+        <h1>CRUD App with Hooks</h1>
+        <div className="flex-row">
+          <div className="flex-large">
+            <h2>Add user</h2>
+            <AddUserForm addUser={addUser}/>
+          </div>
+          <div className="flex-large">
+            <h2>View users</h2>
+            <UserTable users={users} deleteUser={deleteUser}/>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
 }
 
 export default App;
