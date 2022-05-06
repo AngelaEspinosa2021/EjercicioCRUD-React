@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
-const AddUserForm = (props) => {
 
+const AddUserForm = (props) => {
+    const [user, setUser] = useState("");
     const { register, handleSubmit, formState: { errors } } = useForm({
         defaultValues: props.currentUser
     });
