@@ -50,40 +50,38 @@ const Users = () => {
 
     return (
         <div className="container">
-          <nav class="navbar navbar-dark bg-dark">
-            <h1>CRUD App with Hooks</h1>
-          </nav>
-          <br />                
-          <div className="row">
-            <div className="col">
-            {
-              editing? (
-                <div>
-                  <h2>Edit user</h2>
-                  <EditUserForm 
-                    currentUser={currentUser}
-                    updateUser={updateUser}
-                  />
-                  
-                </div>
-              ) : (              
-                <div>
-                  <h2>Add user</h2>
-                  <AddUserForm addUser={addUser}/>
-                </div>                            
-                )
-            }  
-            </div>
-            <div className="col">
-              <h2>View users</h2>
-              <UserTable
-               users={users}
-               deleteUser={deleteUser}
-               editRow={editRow}
-              />
-            </div>          
+          <h1>CRUD App with Hooks</h1>
+        <br />                
+        <div className="row">
+          <div className="col">
+          {
+            editing? (
+              <div>
+                <h2>Edit user</h2>
+                <EditUserForm 
+                  currentUser={currentUser}
+                  updateUser={updateUser}
+                />
+                
+              </div>
+            ) : (              
+              <div>
+                <h2>Add user</h2>
+                <AddUserForm addUser={addUser}/>
+              </div>                            
+              )
+          }  
           </div>
+          <div className="col">
+            <h2>View users</h2>
+            <UserTable
+            users={users}
+            deleteUser={deleteUser}
+            editRow={editRow}
+            />
+          </div>          
         </div>
+      </div>                 
     );
 }
  

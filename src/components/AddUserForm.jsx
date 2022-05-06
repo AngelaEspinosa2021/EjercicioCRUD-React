@@ -15,7 +15,7 @@ const AddUserForm = (props) => {
     }
 
     return (        
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
             <div className='mb-3'>
                 <label className='form-label'>Name</label>
                 <input
@@ -45,10 +45,8 @@ const AddUserForm = (props) => {
             </div> 
             <div>
                 {errors.username?.message} 
-            </div>
-            <div>
-                <button className="btn btn-secondary" onSubmit={handleSubmit(onSubmit)}>Add new user</button>
-            </div>                
+            </div>            
+            <button className="btn btn-secondary">Add new user</button>                    
         </form>
         
     );

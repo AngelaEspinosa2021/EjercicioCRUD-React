@@ -20,7 +20,7 @@ const EditUserForm = (props) => {
     }
 
     return (
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
             <div className='mb-3'>
                     <label className='form-label'>Name</label>
                     <input
@@ -50,10 +50,8 @@ const EditUserForm = (props) => {
                 </div> 
             <div>
                 {errors.username?.message} 
-            </div>
-            <div>
-                <button className="btn btn-secondary" onSubmit={handleSubmit(onSubmit)}>Edit new user</button>
             </div>            
+            <button className="btn btn-secondary">Edit new user</button>                       
         </form>
     );
 }

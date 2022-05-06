@@ -1,11 +1,9 @@
 import React from 'react';
 
-
 const UserTable = (props) => {
     console.log(props.users)
     return (
-        props.users &&
-        <div className="container">            
+        props.users &&                
             <table className="table table-hover">
             <thead>
                 <tr>
@@ -21,21 +19,9 @@ const UserTable = (props) => {
                             <td>{user.name}</td>
                             <td>{user.username}</td>
                             <td>
-                            <button 
-                                className="btn btn-secondary"
-                                onClick={
-                                    () => {props.editRow(user)}
-                                }
-                            >
-                                Edit
-                            </button>
+                            <button className="btn btn-secondary" onClick={() => {props.editRow(user)}}>Edit</button>
                             <span>   </span>
-                            <button
-                                className="btn btn-secondary"
-                                onClick={() => {props.deleteUser(user.id)}}
-                            >
-                                Delete
-                            </button>
+                            <button className="btn btn-secondary" onClick={() => {props.deleteUser(user.id)}}>Delete</button>
                             </td>
                         </tr>
                     )) : (
@@ -46,12 +32,6 @@ const UserTable = (props) => {
                 }
             </tbody>
         </table>
-        </div>  
-        
-        
-        
-        
-        
     );
 }
  
